@@ -1,12 +1,73 @@
 <html>
-<head>
-<title> </title>
-</head>
-<body>
-<h3>spring 2017</h3>
-<ul>
-<li><a href="http://baizman.com/ia2">Information Architecture 2 (CDGD 322)</a></li>
-<li><a href="http://baizman.com/itwd">Introduction to Web Design (CMP 2035)</a></li>
-</ul>
-</body>
+    <head>
+        <title>saulbaizman.github.com</title>
+        <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+        <style>
+            body {
+                font-family: 'Oswald', Helvetica, sans-serif; ;
+                font-weight: 300 ;
+                font-size: 2em ;
+                margin: 2em ;
+            }
+            h3 {
+                font-weight: 300 ;
+                text-transform: uppercase;
+                margin-top: 30px ;
+                letter-spacing: 1px ;
+            }
+            ul {
+                list-style-type: none ;
+                margin-bottom: 2em ;
+            }
+            li {
+                line-height: 1.6em ;
+            }
+            li:before {
+                content: "— " ;
+            }
+            li .course_number {
+                color: #666;
+                font-size: .5em ;
+            }
+
+            a:link, a:visited, a:active, a:focus {
+                color: #aaa ;
+                font-weight: 300 ;
+                text-decoration: none;
+            }
+
+            a:after {
+                content: '';
+                display: block;
+                margin: auto;
+                height: 3px;
+                width: 0px;
+                background: transparent;
+                transition: width .3s ease, background-color .5s ease;
+
+            }
+            a:hover:after {
+                width: 100%;
+                background: rgba(243,30,98,1);
+            }
+
+            li a {
+                display: inline-block;
+                /*                padding-bottom: -4px ;*/
+            }
+
+        </style>
+    </head>
+    <body>
+        <h3>fall 2017</h3>
+        <ul>
+            <li><a href="http://baizman.com/ia1">Information Architecture 1 <span class="course_number">CDGD 342</span></a></li>
+            <li><a href="http://baizman.com/web1">Web Design 1 <span class="course_number">CDGD 304</span></a></li>
+        </ul>
+        <h3>spring 2017</h3>
+        <ul>
+            <li><a href="http://baizman.com/ia2">Information Architecture 2 <span class="course_number">CDGD 322</span></a></li>
+            <li><a href="http://baizman.com/itwd">Introduction to Web Design <span class="course_number">CMP 2035</span></a></li>
+        </ul>
+    </body>
 </html>
