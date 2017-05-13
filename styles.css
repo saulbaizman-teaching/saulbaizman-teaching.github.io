@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Oswald', Helvetica, sans-serif;
+    font-weight: 300 ;
+    font-size: 2em ;
+    margin: 2em ;
+    background-color: rgba(250,250,250,1) ;
+}
+
+h1 {
+    font-size: 0.45em ;
+    font-weight: 500 ;
+    text-transform: uppercase;
+    color: rgba(243,30,98,1) ;
+    letter-spacing: 0.05em ;
+}
+
+h3 {
+    font-weight: 300 ;
+    text-transform: uppercase;
+    margin-top: 30px ;
+    letter-spacing: 1px ;
+}
+
+ul {
+    list-style-type: none ;
+    margin-bottom: 2em ;
+    /* margin-left: -1em ;*/
+    /* -webkit-padding-start: 0px;*/
+}
+
+li {
+    line-height: 1.6em ;
+}
+
+li:before {
+    content: '– ' ;
+}
+
+li .course_number {
+    color: #666;
+    font-size: .5em ;
+}
+
+a:link, a:visited, a:active, a:focus {
+    color: #aaa ;
+    font-weight: 300 ;
+    text-decoration: none;
+}
+
+a:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    background: transparent;
+    transition: width .3s ease, background-color .5s ease;
+
+}
+a:hover:after {
+    width: 100%;
+    background: rgba(243,30,98,1);
+}
+
+li a {
+    display: inline-block;
+    /* padding-bottom: -4px ; */
+}
