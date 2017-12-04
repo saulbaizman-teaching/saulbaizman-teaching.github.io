@@ -1,0 +1,140 @@
+body {
+    background: #000;
+}
+
+.c p {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 9vw;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+}
+
+h4 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    margin-top: -12px
+}
+
+main {
+    margin: 0 auto;
+    width: 80%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*.nav-bar {
+font-family: 'Lato', sans-serif;
+background: rgba(0,0,0,0);
+position: absolute;
+top: 0; right: 0; bottom: 0; left: 0;
+display: flex;
+}*/
+
+a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 20px;
+}
+
+a:hover { 
+    text-decoration: underline; 
+}
+
+li {
+    float: left;
+}
+
+body {
+    margin: 40px;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 10% [repeat 10];
+    grid-template-rows: 10% [repeat 10];
+    background-color: #000;
+}
+
+.box {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+
+}
+
+.a {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    border: 0;
+}
+.b {
+    grid-column: 3/10;
+    grid-row: 1/2;
+    font-family: 'Lato', sans-serif;
+
+}
+.c {
+    grid-column: 1/10;
+    grid-row: ;
+}
+.d {
+    grid-column: 1/10;
+    grid-row: ;
+}
+.e {
+    grid-column: 1/10;
+    
+}
+.joy_bandcamp {
+    
+}
+
+.split_bandcamp {
+    
+}
+
+.joy_spotify {
+    
+}
+
+.split_spotify {
+    
+}
+
+.e a: hovered {
+    text-decoration: underline;
+}
+
+.footer {
+    color: #FFF;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.footer img {
+    padding: 2px
+}
