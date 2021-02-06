@@ -48,11 +48,15 @@ course_names = (
 { 
 "name":       "Intermediate Web Design", # 9
 "number":     "cmp 3011" 
-}, 
+},
 { 
 "name":       "Designing with Data", # 10
-"number":     "dsgn 352" 
-}, 
+"number":     "dsgn 352"
+},
+{ 
+"name":       "Design Symposium", # 11
+"number":     "dsgn 660"
+},
 )
 
 # add new semesters to the bottom of the list
@@ -113,10 +117,22 @@ semesters = (
 "season":     "fall",     
 "year":       "2020" 
 },
+{
+"season":     "spring",
+"year":       "2021" 
+},
 )
 
 # add new courses to the top of the list
 courses = ( 
+# sp21
+{
+"course_name":        course_names[11]["name"], 
+"course_number":      course_names[11]["number"], 
+"course_url":         "https://discord.com/channels/796462787517612033/", 
+"course_section":     "1", 
+"semester":           semesters[14]
+},
 # fa20
 { 
 "course_name":        course_names[0]["name"], 
