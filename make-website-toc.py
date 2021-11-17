@@ -61,70 +61,82 @@ course_names = (
 
 # add new semesters to the bottom of the list
 semesters = ( 
-{ 
+{ #0
 "season":     "fall",     
 "year":       "2014" 
 },
-{ 
+{ #1
 "season":     "spring",   
 "year":       "2015" 
 },
-{ 
+{ #2
 "season":     "fall",     
 "year":       "2015" 
 },
-{ 
+{ #3
 "season":     "spring",   
 "year":       "2016" 
 },
-{ 
+{ #4
 "season":     "summer",   
 "year":       "2016" 
 },
-{ 
+{ #5
 "season":     "fall",     
 "year":       "2016" 
 },
-{ 
+{ #6
 "season":     "spring",   
 "year":       "2017" 
 },
-{ 
+{ #7
 "season":     "fall",     
 "year":       "2017" 
 },
-{ 
+{ #8
 "season":     "spring",   
 "year":       "2018" 
 },
-{ 
+{ #9
 "season":     "fall",     
 "year":       "2018" 
 },
-{ 
+{ #10
 "season":     "spring",   
 "year":       "2019" 
 },
-{ 
+{ #11
 "season":     "fall",     
 "year":       "2019" 
 },
-{ 
+{ #12
 "season":     "spring",   
 "year":       "2020" 
 },
-{ 
+{ #13
 "season":     "fall",     
 "year":       "2020" 
 },
-{
+{ #14
 "season":     "spring",
+"year":       "2021" 
+},
+{ #15
+"season":     "fall",
 "year":       "2021" 
 },
 )
 
 # add new courses to the top of the list
 courses = ( 
+# fa21
+{
+"course_name":        course_names[0]["name"], 
+"course_number":      course_names[0]["number"], 
+"course_url":         "https://cdgd-304-01-fa21.courses.baizman.com/", 
+"course_section":     "1", 
+"semester":           semesters[15]
+},
 # sp21
 {
 "course_name":        course_names[11]["name"], 
