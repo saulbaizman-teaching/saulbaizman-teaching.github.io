@@ -57,6 +57,10 @@ course_names = (
 "name":       "Design Symposium", # 11
 "number":     "dsgn 660"
 },
+{ 
+"name":       "Interactive Design", # 12
+"number":     "art 3402"
+},
 )
 
 # add new semesters to the bottom of the list
@@ -125,15 +129,27 @@ semesters = (
 "season":     "fall",
 "year":       "2021" 
 },
+{ #16
+"season":     "spring",
+"year":       "2022" 
+},
 )
 
 # add new courses to the top of the list
 courses = ( 
 # fa21
 {
+"course_name":        course_names[12]["name"], 
+"course_number":      course_names[12]["number"], 
+"course_url":         "https://art-3402-01-sp22.courses.baizman.com", 
+"course_section":     "1", 
+"semester":           semesters[16]
+},
+# fa21
+{
 "course_name":        course_names[0]["name"], 
 "course_number":      course_names[0]["number"], 
-"course_url":         "https://cdgd-304-01-fa21.courses.baizman.com/", 
+"course_url":         "https://cdgd-304-01-fa21.courses.baizman.com", 
 "course_section":     "1", 
 "semester":           semesters[15]
 },
