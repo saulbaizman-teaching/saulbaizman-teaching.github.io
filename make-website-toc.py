@@ -5,6 +5,8 @@
 This program creates a webpage with a list of courses I've taught.
 '''
 
+css_stylesheet='styles.css'
+
 # course name, course number, url, semester
 
 # add new course names to the bottom of the list
@@ -137,11 +139,18 @@ semesters = (
 
 # add new courses to the top of the list
 courses = ( 
-# fa21
+# sp22
 {
 "course_name":        course_names[12]["name"], 
 "course_number":      course_names[12]["number"], 
 "course_url":         "https://art-3402-01-sp22.courses.baizman.com", 
+"course_section":     "1", 
+"semester":           semesters[16]
+},
+{
+"course_name":        course_names[2]["name"], 
+"course_number":      course_names[2]["number"], 
+"course_url":         "https://cdgd-230-01-sp22.courses.baizman.com", 
 "course_section":     "1", 
 "semester":           semesters[16]
 },
@@ -391,12 +400,12 @@ header='''
 <head>
 <title>%s</title>
 <meta name="viewport" content="width=device-width">
-<link href='https://fonts.googleapis.com/css?family=Oswald:300,500' rel='stylesheet' type='text/css'>
-<link href='styles.css' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,500" rel="stylesheet" type="text/css">
+<link href="%s" rel="stylesheet" type="text/css">
 </head>
 <body>
 <h1>%s</h1>
-''' % ( page_title, page_title )
+''' % ( page_title, css_stylesheet, page_title )
 
 footer='''
 </body>
@@ -436,5 +445,3 @@ index.write(header)
 index.write("\n".join(content))
 index.write(footer)
 index.close()
-
-
