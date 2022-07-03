@@ -135,22 +135,34 @@ semesters = (
 "season":     "spring",
 "year":       "2022" 
 },
+{ #17
+"season":     "fall",
+"year":       "2022" 
+},
 )
 
 # add new courses to the top of the list
 courses = ( 
+# fa22
+{
+"course_name":        course_names[0]["name"], 
+"course_number":      course_names[0]["number"], 
+"course_url":         "https://cdgd-304-01-fa22.courses.baizman.com", 
+"course_section":     "1", 
+"semester":           semesters[17]    
+},
 # sp22
 {
 "course_name":        course_names[12]["name"], 
 "course_number":      course_names[12]["number"], 
-"course_url":         "https://art-3402-01-sp22.courses.baizman.com", 
+"course_url":         "https://eclearn.emmanuel.edu/courses/3412590", 
 "course_section":     "1", 
 "semester":           semesters[16]
 },
 {
 "course_name":        course_names[2]["name"], 
 "course_number":      course_names[2]["number"], 
-"course_url":         "https://cdgd-230-01-sp22.courses.baizman.com", 
+"course_url":         "https://classroom.google.com/c/NDQ0ODgyNzA2ODM0", 
 "course_section":     "1", 
 "semester":           semesters[16]
 },
