@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 """
 This program creates a webpage with a list of courses I've taught.
 """
+
+output_filename = "index.html"
+
+page_title = 'course websites'
 
 css_stylesheet = 'styles.css'
 
@@ -144,248 +147,210 @@ semesters = {
 # add new courses to the top of the list
 courses = (
     {
-        "course_name": course_names.get('cdgd-304').get('name'),
-        "course_number": course_names.get('cdgd-304').get('number'),
+        "course": course_names.get('cdgd-304'),
         "course_url": "https://cdgd-304-01-fa23.courses.baizman.com",
         "course_section": "1",
         "semester": semesters.get('fa23')
     },
     {
-        "course_name": course_names.get('cdgd-304').get('name'),
-        "course_number": course_names.get('cdgd-304').get('number'),
+        "course": course_names.get('cdgd-304'),
         "course_url": "https://cdgd-304-01-fa22.courses.baizman.com",
         "course_section": "1",
         "semester": semesters.get('fa22')
     },
     {
-        "course_name": course_names.get('art-3402').get('name'),
-        "course_number": course_names.get('art-3402').get('number'),
+        "course": course_names.get('art-3402'),
         "course_url": "https://eclearn.emmanuel.edu/courses/3412590",
         "course_section": "1",
         "semester": semesters.get('sp22')
     },
     {
-        "course_name": course_names.get('cdgd-230').get('name'),
-        "course_number": course_names.get('cdgd-230').get('number'),
+        "course": course_names.get('cdgd-230'),
         "course_url": "https://classroom.google.com/c/NDQ0ODgyNzA2ODM0",
         "course_section": "1",
         "semester": semesters.get('sp22')
     },
     {
-        "course_name": course_names.get('cdgd-304').get('name'),
-        "course_number": course_names.get('cdgd-304').get('number'),
+        "course": course_names.get('cdgd-304'),
         "course_url": "https://cdgd-304-01-fa21.courses.baizman.com",
         "course_section": "1",
         "semester": semesters.get('fa21')
     },
     {
-        "course_name": course_names.get('dsgn-660').get('name'),
-        "course_number": course_names.get('dsgn-660').get('number'),
+        "course": course_names.get('dsgn-660'),
         "course_url": "https://discord.com/channels/796462787517612033/",
         "course_section": "1",
         "semester": semesters.get('sp21')
     },
     {
-        "course_name": course_names.get('cdgd-304').get('name'),
-        "course_number": course_names.get('cdgd-304').get('number'),
+        "course": course_names.get('cdgd-304'),
         "course_url": "https://cdgd-304-01-fa20.courses.baizman.com",
         "course_section": "1",
         "semester": semesters.get('fa20')
     },
     {
-        "course_name": course_names.get('cdgd-304').get('name'),
-        "course_number": course_names.get('cdgd-304').get('number'),
+        "course": course_names.get('cdgd-304'),
         "course_url": "https://cdgd-304-01-sp20.courses.baizman.com",
         "course_section": "1",
         "semester": semesters.get('sp20')
     },
     {
-        "course_name": course_names.get('cdgd-304').get('name'),
-        "course_number": course_names.get('cdgd-304').get('number'),
+        "course": course_names.get('cdgd-304'),
         "course_url": "https://cdgd-304-01-fa19.courses.baizman.com",
         "course_section": "1",
         "semester": semesters.get('fa19')
     },
     {
-        "course_name": course_names.get('cdgd-322').get('name'),
-        "course_number": course_names.get('cdgd-322').get('number'),
+        "course": course_names.get('cdgd-322'),
         "course_url": "https://cdgd-322-02-sp19.courses.baizman.com/",
         "course_section": "2",
         "semester": semesters.get('sp19')
     },
     {
-        "course_name": course_names.get('cdgd-230').get('name'),
-        "course_number": course_names.get('cdgd-230').get('number'),
+        "course": course_names.get('cdgd-230'),
         "course_url": "https://cdgd-230-02-sp19.courses.baizman.com/",
         "course_section": "2",
         "semester": semesters.get('sp19')
     },
     {
-        "course_name": course_names.get('cdgd-304').get('name'),
-        "course_number": course_names.get('cdgd-304').get('number'),
+        "course": course_names.get('cdgd-304'),
         "course_url": "https://cdgd-304-01-sp19.courses.baizman.com/",
         "course_section": "1",
         "semester": semesters.get('sp19')
     },
     {
-        "course_name": course_names.get('cdgd-342').get('name'),
-        "course_number": course_names.get('cdgd-342').get('number'),
+        "course": course_names.get('cdgd-342'),
         "course_url": "https://cdgd-342-02-fa18.courses.baizman.com/",
         "course_section": "2",
         "semester": semesters.get('fa18')
     },
     {
-        "course_name": course_names.get('cdgd-206').get('name'),
-        "course_number": course_names.get('cdgd-206').get('number'),
+        "course": course_names.get('cdgd-206'),
         "course_url": "https://cdgd-206-01-fa18.courses.baizman.com/",
         "course_section": "1",
         "semester": semesters.get('fa18')
     },
     {
-        "course_name": course_names.get('cdgd-206').get('name'),
-        "course_number": course_names.get('cdgd-206').get('number'),
+        "course": course_names.get('cdgd-206'),
         "course_url": "https://cdgd-206-02-fa18.courses.baizman.com/",
         "course_section": "2",
         "semester": semesters.get('fa18')
     },
     {
-        "course_name": course_names.get('cdgd-206').get('name'),
-        "course_number": course_names.get('cdgd-206').get('number'),
+        "course": course_names.get('cdgd-206'),
         "course_url": "https://cdgd-206-03-fa18.courses.baizman.com/",
         "course_section": "3",
         "semester": semesters.get('fa18')
     },
     {
-        "course_name": course_names.get('cdgd-304').get('name'),
-        "course_number": course_names.get('cdgd-304').get('number'),
+        "course": course_names.get('cdgd-304'),
         "course_url": "https://cdgd-304-01-fa18.courses.baizman.com/",
         "course_section": "1",
         "semester": semesters.get('fa18')
     },
     {
-        "course_name": course_names.get('cdgd-322').get('name'),
-        "course_number": course_names.get('cdgd-322').get('number'),
+        "course": course_names.get('cdgd-322'),
         "course_url": "https://cdgd-322-02-sp18.courses.baizman.com/",
         "course_section": "2",
         "semester": semesters.get('sp18')
     },
     {
-        "course_name": course_names.get('cdgd-230').get('name'),
-        "course_number": course_names.get('cdgd-230').get('number'),
+        "course": course_names.get('cdgd-230'),
         "course_url": "https://cdgd-230-01-sp18.courses.baizman.com/",
         "course_section": "2",
         "semester": semesters.get('sp18')
     },
     {
-        "course_name": course_names.get('cdgd-342').get('name'),
-        "course_number": course_names.get('cdgd-342').get('number'),
+        "course": course_names.get('cdgd-342'),
         "course_url": "https://saulbaizman-massart.github.io/cdgd-342-02-fa17/",
         "course_section": "2",
         "semester": semesters.get('fa17')
     },
     {
-        "course_name": course_names.get('cdgd-304').get('name'),
-        "course_number": course_names.get('cdgd-304').get('number'),
+        "course": course_names.get('cdgd-304'),
         "course_url": "https://saulbaizman-massart.github.io/cdgd-304-01-fa17/",
         "course_section": "1",
         "semester": semesters.get('fa17')
     },
     {
-        "course_name": course_names.get('cdgd-206').get('name'),
-        "course_number": course_names.get('cdgd-206').get('number'),
+        "course": course_names.get('cdgd-206'),
         "course_url": "https://saulbaizman-massart.github.io/cdgd-206-fa17/",
         "course_section": "",
         "semester": semesters.get('fa17')
     },
     {
-        "course_name": course_names.get('cdgd-322').get('name'),
-        "course_number": course_names.get('cdgd-322').get('number'),
+        "course": course_names.get('cdgd-322'),
         "course_url": "https://saulbaizman-massart.github.io/cdgd-322-02-sp17/",
         "course_section": "",
         "semester": semesters.get('sp17')
     },
     {
-        "course_name": course_names.get('cmp-2035').get('name'),
-        "course_number": course_names.get('cmp-2035').get('number'),
+        "course": course_names.get('cmp-2035'),
         "course_url": "https://saulbaizman-smfa.github.io/cmp-2035-sp17/",
         "course_section": "",
         "semester": semesters.get('sp17')
     },
     {
-        "course_name": course_names.get('cdgd-342').get('name'),
-        "course_number": course_names.get('cdgd-342').get('number'),
+        "course": course_names.get('cdgd-342'),
         "course_url": "https://cdgd-342-fa16.slack.com/",
         "course_section": "",
         "semester": semesters.get('fa16')
     },
     {
-        "course_name": course_names.get('idesn-2115').get('name'),
-        "course_number": course_names.get('idesn-2115').get('number'),
+        "course": course_names.get('idesn-2115'),
         "course_url": "https://idesn-2115-fa16.slack.com/",
         "course_section": "",
         "semester": semesters.get('fa16')
     },
     {
-        "course_name": course_names.get('idesn-3535').get('name'),
-        "course_number": course_names.get('idesn-3535').get('number'),
+        "course": course_names.get('idesn-3535'),
         "course_url": "https://idesn-3535-fa16.slack.com/",
         "course_section": "",
         "semester": semesters.get('fa16')
     },
     {
-        "course_name": course_names.get('cmp-2035i').get('name'),
-        "course_number": course_names.get('cmp-2035i').get('number'),
+        "course": course_names.get('cmp-2035i'),
         "course_url": "https://cmp-2035-su16.slack.com/",
         "course_section": "",
         "semester": semesters.get('su16')
     },
     {
-        "course_name": course_names.get('cmp-2035').get('name'),
-        "course_number": course_names.get('cmp-2035').get('number'),
+        "course": course_names.get('cmp-2035'),
         "course_url": "https://cmp-2035-s16.slack.com/",
         "course_section": "",
         "semester": semesters.get('sp16')
     },
     {
-        "course_name": course_names.get('cmp-3011').get('name'),
-        "course_number": course_names.get('cmp-3011').get('number'),
+        "course": course_names.get('cmp-3011'),
         "course_url": "https://cmp-3011-s16.slack.com/",
         "course_section": "",
         "semester": semesters.get('sp16')
     },
     {
-        "course_name": course_names.get('cmp-2035').get('name'),
-        "course_number": course_names.get('cmp-2035').get('number'),
+        "course": course_names.get('cmp-2035'),
         "course_url": "https://cmp-2035-f15.slack.com/",
         "course_section": "",
         "semester": semesters.get('fa15')
     },
     {
-        "course_name": course_names.get('dsgn-352').get('name'),
-        "course_number": course_names.get('dsgn-352').get('number'),
+        "course": course_names.get('dsgn-352'),
         "course_url": "https://dsgn-352-f15.slack.com/",
         "course_section": "",
         "semester": semesters.get('fa15')
     },
     {
-        "course_name": course_names.get('cmp-3011').get('name'),
-        "course_number": course_names.get('cmp-3011').get('number'),
+        "course": course_names.get('cmp-3011'),
         "course_url": "https://cmp-3011-c1-sp15.slack.com/",
         "course_section": "",
         "semester": semesters.get('sp15')
     },
     {
-        "course_name": course_names.get('cmp-2035').get('name'),
-        "course_number": course_names.get('cmp-2035').get('number'),
+        "course": course_names.get('cmp-2035'),
         "course_url": "https://cmp-2035-c1-fa14.slack.com/",
         "course_section": "",
         "semester": semesters.get('fa14')
     },
 )
-
-output_filename = "index.html"
-
-page_title = 'course websites'
 
 
 def format_link(url, target):
@@ -420,6 +385,8 @@ def main():
     is_first_ul = True
     for course in courses:
         current_semester = f'{course["semester"]["season"]} {course["semester"]["year"]}'
+        course_name = course['course']['name']
+        course_number = course['course']['number'].upper()
         if current_semester != previous_semester:
             if not is_first_ul:
                 content.append('</ul>')  # only print this if not on the first ul
@@ -428,11 +395,12 @@ def main():
             content.append(f'<h3>{current_semester}</h3>')
             content.append('<ul>')
         if course['course_section'] != '':
-            course_number_and_section = f'{course['course_number'].upper()}-0{course['course_section']}'
+            course_number_and_section = f'{course_number}-0{course['course_section']}'
         else:
-            course_number_and_section = course['course_number'].upper()
+            course_number_and_section = course_number
         content.append('<li>' + format_link(course['course_url'],
-                                            f'{course['course_name']} <span class="course_number">{course_number_and_section}</span>') + '</li>')
+                                            f'{course_name} <span class="course_number">'
+                                            f'{course_number_and_section}</span>') + '</li>')
 
         previous_semester = current_semester
 
