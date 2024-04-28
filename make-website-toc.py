@@ -4,7 +4,7 @@
 This program creates a webpage with a list of courses I've taught.
 """
 
-output_filename = "index.html"
+output_filename = 'index.html'
 
 page_title = 'course websites'
 
@@ -358,28 +358,34 @@ def format_link(url, target):
     return f'<a href="{url}" target="_blank" rel="noopener">{target}</a>'
 
 
-def main():
-    """ Output webpage to a file. """
-
-    header = f'''
+def get_header(title, stylesheet):
+    """Return header."""
+    return f'''
     <!DOCTYPE html>
     <html lang="en" dir="ltr">
     <head>
-    <title>{page_title}</title>
+    <title>{title}</title>
     <meta name="viewport" content="width=device-width">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,500" rel="stylesheet" type="text/css">
-    <link href="{css_stylesheet}" rel="stylesheet" type="text/css">
+    <link href="{stylesheet}" rel="stylesheet" type="text/css">
     </head>
     <body>
-    <h1>{page_title}</h1>
+    <h1>{title}</h1>
     '''
 
-    footer = '''
+
+def get_footer():
+    """Return footer."""
+    return '''
     </body>
     </html>
     '''
 
-    content = []
+
+def main():
+    """ Output webpage to a file. """
+
+    body = []
 
     previous_semester = ''
     is_first_ul = True
@@ -389,29 +395,28 @@ def main():
         course_number = course['course']['number'].upper()
         if current_semester != previous_semester:
             if not is_first_ul:
-                content.append('</ul>')  # only print this if not on the first ul
+                body.append('</ul>')  # only print this if not on the first ul
             if is_first_ul:
                 is_first_ul = False  # toggle the variable
-            content.append(f'<h3>{current_semester}</h3>')
-            content.append('<ul>')
+            body.append(f'<h3>{current_semester}</h3>')
+            body.append('<ul>')
+        course_number_and_section = course_number
         if course['course_section'] != '':
             # prepend a "0" to the section number via f-string format
-            course_number_and_section = f'{course_number}-{course['course_section']:0>2}'
-        else:
-            course_number_and_section = course_number
-        content.append('<li>' + format_link(course['course_url'],
+            course_number_and_section += f'-{course['course_section']:0>2}'
+        body.append('<li>' + format_link(course['course_url'],
                                             f'{course_name} <span class="course_number">'
                                             f'{course_number_and_section}</span>') + '</li>')
 
         previous_semester = current_semester
 
-    content.append('</ul>')
+    body.append('</ul>')
 
     # write to the file
     index = open(output_filename, "w")
-    index.write(header)
-    index.write("\n".join(content))
-    index.write(footer)
+    index.write(get_header(title=page_title, stylesheet=css_stylesheet))
+    index.write("\n".join(body))
+    index.write(get_footer())
     index.close()
 
 
