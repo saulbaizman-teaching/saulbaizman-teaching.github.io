@@ -281,13 +281,13 @@ courses = (
     {
         "course": course_names.get('cdgd-322'),
         "course_url": "https://saulbaizman-massart.github.io/cdgd-322-02-sp17/",
-        "course_section": "",
+        "course_section": "2",
         "semester": semesters.get('sp17')
     },
     {
         "course": course_names.get('cmp-2035'),
-        "course_url": "https://saulbaizman-smfa.github.io/cmp-2035-sp17/",
-        "course_section": "",
+        "course_url": "https://saulbaizman-teaching.github.io/cmp-2035-sp17/",
+        "course_section": "1",
         "semester": semesters.get('sp17')
     },
     {
@@ -395,7 +395,8 @@ def main():
             content.append(f'<h3>{current_semester}</h3>')
             content.append('<ul>')
         if course['course_section'] != '':
-            course_number_and_section = f'{course_number}-0{course['course_section']}'
+            # prepend a "0" to the section number via f-string format
+            course_number_and_section = f'{course_number}-{course['course_section']:0>2}'
         else:
             course_number_and_section = course_number
         content.append('<li>' + format_link(course['course_url'],
