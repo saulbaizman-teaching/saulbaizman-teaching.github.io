@@ -142,10 +142,20 @@ semesters = {
         "season": "fall",
         "year": "2023"
     },
+    'fa24': {
+        "season": "fall",
+        "year": "2024"
+    },
 }
 
 # add new courses to the top of the list
 courses = (
+    {
+        "course": course_names.get('cdgd-304'),
+        "course_url": "https://cdgd-304-01-fa24.courses.baizman.com",
+        "course_section": "1",
+        "semester": semesters.get('fa24')
+    },
     {
         "course": course_names.get('cdgd-304'),
         "course_url": "https://cdgd-304-01-fa23.courses.baizman.com",
