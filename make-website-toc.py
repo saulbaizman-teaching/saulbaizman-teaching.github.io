@@ -272,25 +272,25 @@ courses = (
     },
     {
         "course": course_names.get('cdgd-342'),
-        "course_url": "https://saulbaizman-massart.github.io/cdgd-342-02-fa17/",
+        "course_url": "https://saulbaizman-teaching.github.io/cdgd-342-02-fa17/",
         "course_section": "2",
         "semester": semesters.get('fa17')
     },
     {
         "course": course_names.get('cdgd-304'),
-        "course_url": "https://saulbaizman-massart.github.io/cdgd-304-01-fa17/",
+        "course_url": "https://saulbaizman-teaching.github.io/cdgd-304-01-fa17/",
         "course_section": "1",
         "semester": semesters.get('fa17')
     },
     {
         "course": course_names.get('cdgd-206'),
-        "course_url": "https://saulbaizman-massart.github.io/cdgd-206-fa17/",
+        "course_url": "https://saulbaizman-teaching.github.io/cdgd-206-fa17/",
         "course_section": "",
         "semester": semesters.get('fa17')
     },
     {
         "course": course_names.get('cdgd-322'),
-        "course_url": "https://saulbaizman-massart.github.io/cdgd-322-02-sp17/",
+        "course_url": "https://saulbaizman-teaching.github.io/cdgd-322-02-sp17/",
         "course_section": "2",
         "semester": semesters.get('sp17')
     },
