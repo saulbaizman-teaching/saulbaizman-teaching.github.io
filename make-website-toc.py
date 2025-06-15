@@ -18,9 +18,6 @@ courses_tsv = 'courses.tsv'
 # course names filename
 course_names_tsv = 'course_names.tsv'
 
-# semesters filename
-semesters_tsv = 'semesters.tsv'
-
 
 def format_link(url, target):
     """Format a link."""
@@ -69,22 +66,6 @@ def get_course_names(tsv):
     return course_names_dict
 
 
-def get_semesters(tsv):
-    """Return list of semesters."""
-    semesters_dict = {}
-    with open(tsv, newline='') as tsv_file:
-        semesters = csv.reader(tsv_file, delimiter="\t", quotechar='"')
-        for row in semesters:
-            season = row[0]
-            year = row[1]
-            key = f'{season[0:2]}{year[-2:]}'
-            semesters_dict[key] = {
-                'season': season,
-                'year': year
-            }
-    return semesters_dict
-
-
 def get_courses(tsv):
     """Return list of courses."""
     courses_list = []
@@ -94,12 +75,14 @@ def get_courses(tsv):
             number = row[0]
             url = row[1]
             section = row[2]
-            semester = row[3]
+            season = row[3]
+            year = row[4]
             courses_list.append({
-                'course': number,
+                'number': number,
                 'url': url,
                 'section': section,
-                'semester': semester
+                'season': season,
+                'year': year,
             })
     return courses_list
 
@@ -111,13 +94,13 @@ def main():
     previous_semester = ''
     is_first_ul = True
 
-    semesters = get_semesters(semesters_tsv)
     course_names = get_course_names(course_names_tsv)
 
     for course in get_courses(courses_tsv):
-        current_semester = f'{semesters.get(course.get('semester')).get('season')} {semesters.get(course.get('semester')).get('year')}'
-        course_name = course_names.get(course.get('course')).get('name')
-        course_number = course_names.get(course.get('course')).get('number').upper()
+        current_semester = f'{course.get('season')} {course.get('year')}'
+        course_name = course_names.get(course.get('number')).get('name')
+        # do not use course.get('number'). it has a dash and an issue with a course exception.
+        course_number = course_names.get(course.get('number')).get('number').upper()
 
         if current_semester != previous_semester:
             if not is_first_ul:
