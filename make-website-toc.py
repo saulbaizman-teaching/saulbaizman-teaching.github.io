@@ -6,16 +6,16 @@ This program creates a webpage with a list of courses I've taught.
 
 import csv
 
-# page title
+# page title.
 page_title = 'course websites'
 
-# stylesheet filename
+# stylesheet filename.
 css_stylesheet = 'styles.css'
 
-# courses filename
+# courses tsv filename.
 courses_tsv = 'courses.tsv'
 
-# course names filename
+# course names tsv filename.
 course_names_tsv = 'course_names.tsv'
 
 
@@ -53,7 +53,7 @@ def get_course_names(tsv):
     course_names_dict = {}
     with open(tsv, newline='') as tsv_file:
         course_names = csv.reader(tsv_file, delimiter="\t", quotechar='"')
-        # skip header
+        # skip header.
         next(course_names)
         for row in course_names:
             course_number = row[0]
@@ -73,7 +73,7 @@ def get_courses(tsv):
     courses_list = []
     with open(tsv, newline='') as tsv_file:
         courses = csv.reader(tsv_file, delimiter="\t", quotechar='"')
-        # skip header
+        # skip header.
         next(courses)
         for row in courses:
             number = row[0]
@@ -108,14 +108,14 @@ def main():
 
         if current_semester != previous_semester:
             if not is_first_ul:
-                body.append('</ul>')  # only print this if not on the first ul
+                body.append('</ul>')  # only print this if not on the first ul.
             if is_first_ul:
-                is_first_ul = False  # toggle the variable
+                is_first_ul = False  # toggle the variable.
             body.append(f'<h3>{current_semester}</h3>')
             body.append('<ul>')
         course_number_and_section = course_number
         if course.get('section') != '':
-            # prepend a "0" to the section number via f-string format
+            # prepend a "0" to the section number via f-string format.
             course_number_and_section += f'-{course.get('section'):0>2}'
         body.append('<li>' + format_link(
             url=course.get('url'),
@@ -126,7 +126,7 @@ def main():
 
     body.append('</ul>')
 
-    # output the data
+    # output the data.
     print(get_header(title=page_title, stylesheet=css_stylesheet))
     print("\n".join(body))
     print(get_footer())
