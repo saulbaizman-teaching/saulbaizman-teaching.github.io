@@ -53,6 +53,8 @@ def get_course_names(tsv):
     course_names_dict = {}
     with open(tsv, newline='') as tsv_file:
         course_names = csv.reader(tsv_file, delimiter="\t", quotechar='"')
+        # skip header
+        next(course_names)
         for row in course_names:
             course_number = row[0]
             course_name = row[1]
@@ -71,6 +73,8 @@ def get_courses(tsv):
     courses_list = []
     with open(tsv, newline='') as tsv_file:
         courses = csv.reader(tsv_file, delimiter="\t", quotechar='"')
+        # skip header
+        next(courses)
         for row in courses:
             number = row[0]
             url = row[1]
