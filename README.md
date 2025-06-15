@@ -5,3 +5,7 @@ This repository is the source code for a one-page static website that houses an 
 `make-website-toc.py` automatically generates the `index.html` file. See the file for instructions on adding a new course name, semester, and course.
 
 [Visit courses.baizman.com.](https://courses.baizman.com)
+
+## automatic updates
+
+Update `make-website-toc.py` and commit it. The `regenerate-index.yml` workflow  will automatically regenerate the index.html and commit it back to the repository.

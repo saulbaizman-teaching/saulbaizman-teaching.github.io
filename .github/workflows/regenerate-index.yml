@@ -1,0 +1,49 @@
+# regenerate index.html when make-website-toc.py is updated and commit and push it back to the repository.
+# https://stackoverflow.com/questions/57921401/push-to-origin-from-github-action/58393457#58393457
+
+name: regenerate index.html
+on:
+  push:
+    branches:
+      - production
+    paths:
+      - make-website-toc.py
+  # run this workflow manually
+  workflow_dispatch:
+
+env:
+  INDEX: index.html
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate-index:
+    name: Regenerate index.html and commit it back to the repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out the repository
+        uses: actions/checkout@v4
+      - name: regenerate the index.html webpage
+        run: python3 make-website-toc.py > ${INDEX} 2> ${GITHUB_STEP_SUMMARY}
+      - name: commit index.html, if needed
+        run: >
+          git config --global --add safe.directory '*';
+          git config --global user.name 'Saul Baizman';
+          git config --global user.email 'baizman-design@users.noreply.github.com';
+          set +e;
+          git diff --quiet --exit-code;
+          if [ $? -eq 1 ];
+          then
+          set -e;
+          added="$(git diff --numstat ${INDEX} | awk '{print $1}')";
+          echo "lines added: ${added:-0}" | tee -a ${GITHUB_STEP_SUMMARY};
+          deleted="$(git diff --numstat ${INDEX} | awk '{print $2}')";
+          echo "lines deleted: ${deleted:-0}" | tee -a ${GITHUB_STEP_SUMMARY};
+          git add ${INDEX};
+          git commit -m "Updated ${INDEX} via GHA.";
+          git push;
+          echo "changes were successfully committed to the repository." | tee -a ${GITHUB_STEP_SUMMARY};
+          else
+          echo "it appears nothing changed." | tee -a ${GITHUB_STEP_SUMMARY};
+          fi
