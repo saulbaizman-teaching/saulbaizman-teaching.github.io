@@ -110,7 +110,8 @@ def main():
             body.append(f'<h3>{current_semester}</h3>')
             body.append('<ul>')
         course_number_and_maybe_section = course_number_uppercase
-        if course.get('section') != '':
+        # if there's a section number, append it as "-0N".
+        if course.get('section'):
             # prepend a "0" to the section number via f-string format.
             course_number_and_maybe_section += f'-{course.get('section'):0>2}'
         body.append('<li>' + format_link(
