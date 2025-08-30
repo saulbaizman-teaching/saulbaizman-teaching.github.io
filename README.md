@@ -2,8 +2,7 @@
 
 This repository is the source code for a one-page static website that houses an index of all courses I have taught since 2014. (Note: some links point to closed systems such as Slack and Discord. Websites with "403 Forbidden" errors have likely been disabled via `.htaccess` on the web host.)
 
-
-[Visit courses.baizman.com.](https://courses.baizman.com)
+The website used to be hosted at [courses.baizman.com](https://courses.baizman.com), but it was retired in August 2025.
 
 ## manual updates
 
